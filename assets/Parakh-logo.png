@@ -1,0 +1,17 @@
+class LogoButton(ButtonBehavior, Image):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        self.source = "assets/parakh-logo.png"
+        self.allow_stretch = True
+        self.keep_ratio = True
+
+        self.size_hint = (None, None)
+        self.size = (dp(45), dp(45))
+
+        self.bind(
+            on_release=self.logo_clicked
+        )
+
+    def logo_clicked(self, *args):
+        print("PARAKH logo clicked")
